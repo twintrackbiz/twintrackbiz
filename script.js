@@ -1,47 +1,57 @@
-// Basic UX interactions for CTAs, modal, contact handlers
+// interactions: modal onboarding + CTAs
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('modal');
-  const startBtn = document.getElementById('startBtn');
+  const earlyBtn = document.getElementById('earlyBtn');
   const loginBtn = document.getElementById('loginBtn');
-  const sampleBtn = document.getElementById('sampleBtn');
   const closeModal = document.getElementById('closeModal');
   const cancelModal = document.getElementById('cancelModal');
+  const buyStarter = document.getElementById('buyStarter');
+  const buyPro = document.getElementById('buyPro');
+  const buyAgency = document.getElementById('buyAgency');
 
-  function openModal(){ modal.classList.remove('hidden'); modal.setAttribute('aria-hidden','false') }
-  function closeModalFn(){ modal.classList.add('hidden'); modal.setAttribute('aria-hidden','true') }
+  function openModal(){ modal.classList.remove('hidden'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function closeModalFn(){ modal.classList.add('hidden'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow='auto'; }
 
-  startBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
-  sampleBtn.addEventListener('click', (e) => { /* anchor scroll default */ });
-  loginBtn.addEventListener('click', () => { alert('Login / account management will be available after signup.'); });
-
+  if(earlyBtn) earlyBtn.addEventListener('click', (e)=>{ e.preventDefault(); openModal(); });
+  if(loginBtn) loginBtn.addEventListener('click', ()=>{ alert('Login & account features coming soon — early access first.'); });
   if(closeModal) closeModal.addEventListener('click', closeModalFn);
   if(cancelModal) cancelModal.addEventListener('click', closeModalFn);
 
-  // contact form placeholder (replace action with GHL webhook or email)
-  window.handleContact = function(e){
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    alert(`Thanks ${name}! We received your message and will reply to ${email}.`);
-    e.target.reset();
-    return false;
-  };
-
-  // onboarding modal form placeholder (connect to GHL checkout later)
+  // Onboard form
   window.handleOnboard = function(e){
     e.preventDefault();
     const company = document.getElementById('company').value.trim();
     const competitor1 = document.getElementById('competitor1').value.trim();
     const email = document.getElementById('emailOnboard').value.trim();
-    // TODO: Replace with real webhook to GHL or serverless endpoint
-    alert(`Great — we've recorded ${company}. A confirmation will be sent to ${email}. (This is a demo onboarding form.)`);
+    // TODO: replace with real webhook to GHL or Netlify function
+    alert(`Invite requested for ${company}. We will contact ${email} with next steps.`);
     e.target.reset();
     closeModalFn();
     return false;
   };
 
-  // Pricing CTA hooks (replace with real checkout links)
-  document.getElementById('buyStarter').addEventListener('click', (e)=>{ e.preventDefault(); alert('Starter plan selected. Next: connect Stripe checkout via GHL.')});
-  document.getElementById('buyPro').addEventListener('click', (e)=>{ e.preventDefault(); alert('Pro plan selected. Next: connect Stripe checkout via GHL.')});
-  document.getElementById('buyAgency').addEventListener('click', (e)=>{ e.preventDefault(); alert('Contact sales: email hello@twintrackbiz.com (placeholder)')});
+  // Contact form placeholder
+  window.handleContact = function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    alert(`Thanks ${name}! We'll reply to ${email} within 24 hours.`);
+    e.target.reset();
+    return false;
+  };
+
+  // Pricing CTA hooks (replace with real GHL checkout links)
+  if(buyStarter) buyStarter.addEventListener('click', (e)=>{ e.preventDefault(); alert('Starter plan selected. Connect Stripe checkout via GHL to activate.'); });
+  if(buyPro) buyPro.addEventListener('click', (e)=>{ e.preventDefault(); alert('Pro plan selected. Connect Stripe checkout via GHL to activate.'); });
+  if(buyAgency) buyAgency.addEventListener('click', (e)=>{ e.preventDefault(); alert('Contact sales: hello@twintrackbiz.com (placeholder)'); });
+
+  // small parallax on scroll for radar
+  const radar = document.querySelector('.radar-wrap');
+  window.addEventListener('scroll', () => {
+    if(!radar) return;
+    const rect = radar.getBoundingClientRect();
+    const mid = window.innerHeight/2;
+    const diff = (rect.top - mid) * -0.02;
+    radar.style.transform = `translateY(${diff}px)`;
+  });
 });
