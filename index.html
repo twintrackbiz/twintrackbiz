@@ -1,18 +1,286 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TwinTrackBiz</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TwinTrackBiz — Your Competitor Mirror</title>
+  <meta name="description" content="TwinTrackBiz quietly watches your competitors and delivers weekly, actionable reports so you always know what to do next." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="maze-bg"></div>
-  <div class="center">
-    <h1 class="glow">TwinTrackBiz</h1>
-    <p class="subtitle">Navigate Business Growth</p>
-    <button class="cta">Coming Soon</button>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo-mark" aria-hidden="true"></div>
+        <div class="brand-text">
+          <div class="brand-title">TwinTrackBiz</div>
+          <div class="brand-sub">Stay two steps ahead</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#how">How it Works</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <button class="btn btn-ghost" id="loginBtn">Login</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- animated maze background -->
+    <div class="maze-bg" aria-hidden="true"></div>
+
+    <!-- Hero -->
+    <section class="hero wrap" id="home">
+      <div class="hero-left">
+        <h1 class="hero-title">Track your competitors. Catch opportunities. Win faster.</h1>
+        <p class="hero-sub">TwinTrackBiz quietly mirrors competitor activity — site changes, new offers, social spikes — and sends crisp, tactical reports you can act on this week.</p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" id="startBtn" href="#pricing">Start Tracking</a>
+          <a class="btn btn-ghost" id="sampleBtn" href="#sample">See a Sample Report</a>
+        </div>
+
+        <ul class="hero-bullets">
+          <li>Weekly competitor intelligence — delivered by email</li>
+          <li>No dashboards. Just clear, actionable summaries</li>
+          <li>Serverless, privacy-first, low-cost for small businesses</li>
+        </ul>
+      </div>
+
+      <div class="hero-right" aria-hidden="true">
+        <!-- Mockup card -->
+        <div class="mockup">
+          <header class="mockup-header">TwinTrack Report — Weekly Brief</header>
+          <div class="mockup-body">
+            <div class="row">
+              <div class="chip">Competitor</div>
+              <div class="muted">What changed</div>
+            </div>
+
+            <div class="change">
+              <strong>New pricing page launched</strong>
+              <p class="muted">Competitor X added a “Startup Plan” at 20% discount.</p>
+              <div class="tag">Action: Run a 7-day promo targeting the same keywords</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="row small">
+              <div><strong>Signals</strong></div>
+              <div class="muted">Organic reach spike + ad activity</div>
+            </div>
+
+            <div class="footer-note muted">Delivered: Mon, Oct 6</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how wrap" id="how">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="icon">1</div>
+          <h3>Tell us your rivals</h3>
+          <p>Enter competitor URLs or social handles in the onboarding form.</p>
+        </div>
+        <div class="step">
+          <div class="icon">2</div>
+          <h3>We watch them weekly</h3>
+          <p>Automated checks detect new pages, price changes, and content updates.</p>
+        </div>
+        <div class="step">
+          <div class="icon">3</div>
+          <h3>You receive an action brief</h3>
+          <p>A simple email with what changed, why it matters, and the next move.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features wrap" id="features">
+      <h2>Core features</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="f-icon">🔎</div>
+          <h4>Site & Page Change Detection</h4>
+          <p>Spot new landing pages, pricing updates, and hidden offers as soon as they appear.</p>
+        </div>
+
+        <div class="feature">
+          <div class="f-icon">⚡</div>
+          <h4>Signal Alerts</h4>
+          <p>Notifies you of sudden traffic or social activity spikes that matter.</p>
+        </div>
+
+        <div class="feature">
+          <div class="f-icon">✉️</div>
+          <h4>Weekly Tactical Briefs</h4>
+          <p>Human-readable short reports with clear next steps — no dashboards required.</p>
+        </div>
+
+        <div class="feature">
+          <div class="f-icon">🤝</div>
+          <h4>White-label Reports</h4>
+          <p>Agency tier can rebrand PDFs and forward them to clients automatically.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sample Report anchor -->
+    <section class="sample wrap" id="sample">
+      <h2>Sample report preview</h2>
+      <p class="muted">A short excerpt from a weekly TwinTrack brief.</p>
+
+      <div class="report-preview">
+        <div class="report-left">
+          <h3>Competitor: BlueWave Digital</h3>
+          <p class="muted">Change detected: New service page + discount banner</p>
+          <ul>
+            <li><strong>What:</strong> Added “Startup SEO” package at $199/mo</li>
+            <li><strong>Why it matters:</strong> They’re targeting SMBs with price-sensitive offers</li>
+            <li><strong>Suggested move:</strong> Launch a 14-day retargeting ad and a limited-time “business bundle”</li>
+          </ul>
+        </div>
+        <div class="report-right">
+          <div class="stat">+12% <span class="muted">search traffic</span></div>
+          <div class="stat">3 <span class="muted">new landing pages</span></div>
+          <div class="stat">2 <span class="muted">ad campaigns</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing wrap" id="pricing">
+      <h2>Plans</h2>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-tag">$19<span class="mo">/mo</span></div>
+          <h3>Starter</h3>
+          <p class="muted">1 competitor • weekly brief</p>
+          <ul>
+            <li>Weekly change summary</li>
+            <li>Email delivery</li>
+            <li>Cancel anytime</li>
+          </ul>
+          <a class="btn btn-primary btn-block" href="#subscribe" id="buyStarter">Start</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="price-tag">$49<span class="mo">/mo</span></div>
+          <h3>Pro</h3>
+          <p class="muted">3 competitors • daily quick alerts</p>
+          <ul>
+            <li>Everything in Starter</li>
+            <li>Daily quick signals</li>
+            <li>Priority onboarding</li>
+          </ul>
+          <a class="btn btn-primary btn-block" href="#subscribe" id="buyPro">Get Pro</a>
+        </div>
+
+        <div class="price-card">
+          <div class="price-tag">$99<span class="mo">/mo</span></div>
+          <h3>Agency</h3>
+          <p class="muted">10 competitors • white-label reports</p>
+          <ul>
+            <li>White-label PDFs</li>
+            <li>Multiple client lists</li>
+            <li>Priority support</li>
+          </ul>
+          <a class="btn btn-primary btn-block" href="#subscribe" id="buyAgency">Contact Sales</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials wrap" id="trust">
+      <h2>What early users say</h2>
+      <div class="test-grid">
+        <blockquote>
+          “TwinTrackBiz helped us spot a competitor's promo a day early — we matched it and kept our churn low.”<cite>— Sarah, Growth Lead</cite>
+        </blockquote>
+        <blockquote>
+          “Simple, fast, and zero dashboard fatigue. The briefs are concise and actionable.”<cite>— Omar, Agency Founder</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq wrap" id="faq">
+      <h2>FAQ</h2>
+      <div class="qa">
+        <div>
+          <h4>Do I need to give you access to my accounts?</h4>
+          <p class="muted">No — we only monitor public pages and social handles you provide.</p>
+        </div>
+        <div>
+          <h4>How fast will I see the first report?</h4>
+          <p class="muted">First weekly report is delivered on the next scheduled run (you can pick the day in onboarding).</p>
+        </div>
+        <div>
+          <h4>Can I add/remove competitors later?</h4>
+          <p class="muted">Yes — change anytime via email or your account settings (coming soon).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section class="contact wrap" id="contact">
+      <div class="contact-left">
+        <h2>Ready to stay ahead?</h2>
+        <p class="muted">Sign up now and begin monitoring your competitors in minutes.</p>
+        <a class="btn btn-primary" id="ctaStart" href="#pricing">Start Free Trial</a>
+      </div>
+
+      <form class="contact-form" id="contactForm" action="#" method="POST" onsubmit="return handleContact(event)">
+        <label for="name">Name</label>
+        <input id="name" name="name" required placeholder="Your name" />
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required placeholder="you@company.com" />
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="3" placeholder="Questions or custom onboarding"></textarea>
+        <button class="btn btn-primary" type="submit">Send</button>
+        <p class="muted small">We'll respond within 24 hours.</p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>© <strong>TwinTrackBiz</strong> — Built for businesses who choose to lead.</div>
+      <div class="foot-links">
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">×</button>
+      <h3>Get started with TwinTrackBiz</h3>
+      <p class="muted">Onboarding currently integrates with your email — we’ll guide you to connect competitor URLs after signup.</p>
+      <form id="onboardForm" onsubmit="return handleOnboard(event)">
+        <label for="company">Company name</label>
+        <input id="company" name="company" required placeholder="Acme Inc." />
+        <label for="competitor1">Competitor URL #1</label>
+        <input id="competitor1" name="competitor1" required placeholder="https://competitor.com" />
+        <label for="emailOnboard">Email for reports</label>
+        <input id="emailOnboard" name="emailOnboard" type="email" required placeholder="reports@yourco.com" />
+        <div class="modal-actions">
+          <button class="btn btn-primary" type="submit">Start Free Trial</button>
+          <button class="btn btn-ghost" type="button" id="cancelModal">Cancel</button>
+        </div>
+      </form>
+    </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
